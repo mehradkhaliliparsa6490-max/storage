@@ -735,13 +735,7 @@
     function setHousingChips(value) { $('#housingTypeChips').innerHTML = '<button type="button" class="chip" data-value="تک اورینگ">تک اورینگ</button><button type="button" class="chip" data-value="دو اورینگ">دو اورینگ</button>'; $('#housingColorChips').innerHTML = '<button type="button" class="chip" data-value="شیشه‌ای">شیشه‌ای</button><button type="button" class="chip" data-value="سفید">سفید</button>'; state.housingType = ''; state.housingColor = ''; $('#housingColorChips').style.display = 'none'; $('#housingColorChips').style.opacity = '1'; $('#housingColorChips').style.transform = 'none'; if (value) { const parts = value.split('-').map(s => s.trim()); if (parts.length > 0 && (parts[0] === 'تک اورینگ' || parts[0] === 'دو اورینگ')) { state.housingType = parts[0]; const typeChip = $(`#housingTypeChips .chip[data-value="${parts[0]}"]`); if (typeChip) typeChip.classList.add('active'); $('#housingColorChips').style.display = 'flex'; if (parts.length > 1 && (parts[1] === 'شیشه‌ای' || parts[1] === 'سفید')) { state.housingColor = parts[1]; const colorChip = $(`#housingColorChips .chip[data-value="${parts[1]}"]`); if (colorChip) colorChip.classList.add('active'); } } } }
     function resetChips() { $$('.chips .chip').forEach(c => c.classList.remove('active')); }
 
-    function openPicker(category) {
-        const items = warehouse[category] || []; if (!items.length) { toast('هنوز چیزی در این دسته ثبت نکردی'); return; }
-        let curVal = ''; if (category === 'pump') curVal = $('#pump').value; else if (category === 'labelType') curVal = $('#labelType').value; else if (category === 'cartonType') curVal = $('#cartonType').value;
-        const labelMap = { pump: 'پمپ', labelType: 'لیبل', cartonType: 'کارتون' };
-        const html = '<div class="sheet-handle"></div><div class="sheet-head"><h2>📋 انتخاب ' + labelMap[category] + ' از انبار</h2><button class="icon-btn" data-act="close" aria-label="بستن">✕</button></div><div class="sheet-body"><p class="hint" style="text-align:right">یکی از مدل‌های انبار رو انتخاب کن:</p><div class="chips">' + items.map(p => { const active = (p === curVal.trim()) ? ' active' : ''; return '<button type="button" class="chip pick-item' + active + '" data-pick="' + escapeHtml(p) + '" data-target="' + category + '">' + escapeHtml(p) + '</button>'; }).join('') + '</div></div><div class="sheet-foot"></div>';
-        $('#sheet').innerHTML = html; $('#sheetBackdrop').hidden = false; lockScroll();
-    }
+    function openPicker(category) { const items = warehouse[category] || []; if (!items.length) { toast('هنوز چیزی در این دسته ثبت نکردی'); return; } let curVal = ''; if (category === 'pump') curVal = $('#pump').value; else if (category === 'labelType') curVal = $('#labelType').value; else if (category === 'cartonType') curVal = $('#cartonType').value; const labelMap = { pump: 'پمپ', labelType: 'لیبل', cartonType: 'کارتون' }; const html = '<div class="sheet-handle"></div><div class="sheet-head"><h2>📋 انتخاب ' + labelMap[category] + ' از انبار</h2><button class="icon-btn" data-act="close" aria-label="بستن">✕</button></div><div class="sheet-body"><p class="hint" style="text-align:right">یکی از مدل‌های انبار رو انتخاب کن:</p><div class="chips">' + items.map(p => { const active = (p === curVal.trim()) ? ' active' : ''; return '<button type="button" class="chip pick-item' + active + '" data-pick="' + escapeHtml(p) + '" data-target="' + category + '">' + escapeHtml(p) + '</button>'; }).join('') + '</div></div><div class="sheet-foot"></div>'; $('#sheet').innerHTML = html; $('#sheetBackdrop').hidden = false; lockScroll(); }
 
     function resetForm() { $('#invoiceForm').reset(); $$('.invalid').forEach(el => el.classList.remove('invalid')); }
     function fillForm(inv) { $('#invoiceNumber').value = inv.invoiceNumber || ''; $('#buyerName').value = inv.buyerName || ''; $('#city').value = inv.city || ''; $('#deviceModel').value = inv.deviceModel || ''; $('#quantity').value = inv.quantity ? toFa(inv.quantity) : ''; $('#hawaleNumber').value = inv.hawaleNumber || ''; $('#pump').value = inv.pump || ''; $('#labelType').value = inv.labelType || ''; $('#cartonType').value = inv.cartonType || ''; $('#createdAt').value = inv.createdAt ? toFa(inv.createdAt) : ''; $('#deliveryDate').value = inv.deliveryDate ? toFa(inv.deliveryDate) : ''; setChip('chassis', inv.chassis); setHousingChips(inv.housing); setChip('tank', inv.tank); setChip('solenoidValve', inv.solenoidValve); setChip('membrane', inv.membrane); setChip('inletValve', inv.inletValve); }
@@ -889,7 +883,6 @@
             if (!res.ok) return;
             const data = await res.json();
             
-            // بررسی اینکه آیا کاربر دکمه "بعدا" را زده است (تا ۱ روز دیگر یادآوری نشود)
             let snooze = 0;
             try { snooze = Number(localStorage.getItem(KEY.updateSnooze) || 0); } catch(e){}
             if (Date.now() < snooze) return;
@@ -913,7 +906,6 @@
                 };
 
                 $('#updateLater').onclick = () => {
-                    // ۱ روز بعد دوباره یادآوری کن
                     try { localStorage.setItem(KEY.updateSnooze, String(Date.now() + 24*60*60*1000)); } catch(e){}
                     $('#updateModal').hidden = true;
                     lockScroll();
