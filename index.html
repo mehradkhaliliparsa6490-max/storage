@@ -103,9 +103,9 @@ input.invalid{border-color:#f09aa6!important;box-shadow:0 0 0 4px rgba(240,154,1
 .primary-btn{flex:1;border:0;border-radius:17px;padding:16px;font-family:inherit;font-size:.98rem;font-weight:800;color:#fff;cursor:pointer;background:var(--g1);box-shadow:0 14px 28px -12px rgba(21,84,168,.95),inset 0 1px 0 rgba(255,255,255,.4)}
 .primary-btn:active{transform:scale(.975)}
 .secondary-btn{flex:0 0 auto;border:1px solid var(--ln);border-radius:17px;padding:16px 20px;font-family:inherit;font-size:.92rem;font-weight:700;color:var(--b7);background:rgba(255,255,255,.9);cursor:pointer}
-.sheet-backdrop{position:fixed;inset:0;z-index:90;background:rgba(12,40,80,.35);display:flex;align-items:flex-end;justify-content:center;animation:fade .2s both}
+.sheet-backdrop{position:fixed;inset:0;z-index:90;background:rgba(12,40,80,.35);display:flex;align-items:flex-end;justify-content:center;animation:fade .2s backwards}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-.sheet{width:100%;max-width:560px;max-height:90vh;border-radius:26px 26px 0 0;overflow:hidden;display:flex;flex-direction:column;animation:slideUp .28s cubic-bezier(.2,.9,.3,1) both;padding-bottom:env(safe-area-inset-bottom)}
+.sheet{width:100%;max-width:560px;max-height:90vh;border-radius:26px 26px 0 0;overflow:hidden;display:flex;flex-direction:column;animation:slideUp .28s cubic-bezier(.2,.9,.3,1) backwards;padding-bottom:env(safe-area-inset-bottom)}
 @keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}
 .sheet-handle{width:44px;height:5px;border-radius:99px;background:#c7daf5;margin:10px auto 4px;flex:0 0 auto}
 .sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 18px 12px;flex:0 0 auto}
@@ -133,8 +133,8 @@ input.invalid{border-color:#f09aa6!important;box-shadow:0 0 0 4px rgba(240,154,1
 .wh-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 6px 5px 11px;background:rgba(227,238,254,.95);border:1px solid rgba(185,214,255,.95);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--b8)}
 .wh-chip button{width:22px;height:22px;border-radius:50%;border:0;background:rgba(201,59,82,.12);color:#c93b52;font-size:1.05rem;font-weight:800;cursor:pointer;display:grid;place-items:center;padding:0;font-family:inherit}
 .wh-add{display:flex;gap:8px}.wh-add input{flex:1;min-width:0;font-size:.85rem;padding:10px 12px;min-height:42px;border-radius:11px}.wh-add button{min-height:42px;font-size:.78rem}
-.modal-backdrop{position:fixed;inset:0;z-index:110;background:rgba(12,40,80,.42);display:flex;align-items:center;justify-content:center;padding:20px;animation:fade .22s both}
-.modal{width:100%;max-width:420px;padding:26px 22px 20px;text-align:center;border-radius:26px;animation:pop .28s cubic-bezier(.2,.9,.3,1) both}
+.modal-backdrop{position:fixed;inset:0;z-index:110;background:rgba(12,40,80,.42);display:flex;align-items:center;justify-content:center;padding:20px;animation:fade .22s backwards}
+.modal{width:100%;max-width:420px;padding:26px 22px 20px;text-align:center;border-radius:26px;animation:pop .28s cubic-bezier(.2,.9,.3,1) backwards}
 @keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:none}}
 .modal-icon{font-size:2.2rem;margin-bottom:8px}.modal h2{margin:0 0 10px;font-size:1.08rem;font-weight:800;color:var(--b9)}
 .modal p{margin:0 0 18px;font-size:.85rem;line-height:1.9;color:#5a7a9e}
@@ -171,15 +171,15 @@ input.invalid{border-color:#f09aa6!important;box-shadow:0 0 0 4px rgba(240,154,1
 @media print{@page{size:A4;margin:10mm}body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}body *{visibility:hidden!important}.print-overlay,.print-overlay *{visibility:visible!important}.print-overlay{position:absolute!important;left:0;top:0;width:100%;background:#fff!important;padding:0!important}.print-bar{display:none!important}.inv-paper{box-shadow:none!important;border:none!important;max-width:100%!important;margin:0!important;border-radius:0}.gp{page-break-after:always;break-after:page}.gp:last-child{page-break-after:auto;break-after:auto}}
 body.locked .wrap,body.locked .topbar,body.locked .bottom-bar{display:none!important}.print-bar{flex-wrap:wrap}@media print{html,body{overflow:visible!important;height:auto!important}}.glass{box-shadow:0 6px 18px -12px rgba(23,74,150,.35),inset 0 1px 0 rgba(255,255,255,.95)}.sheet.glass,.modal.glass{background:#f7faff}.topbar{background:rgba(255,255,255,.96)}
 .invoice-card{content-visibility:auto;contain-intrinsic-size:auto 150px}html.kb .bottom-bar{padding:6px 12px}html.kb .bottom-bar .primary-btn,html.kb .bottom-bar .secondary-btn{padding:10px 16px;border-radius:13px}.bottom-bar{transform:translateZ(0)}
-a,button,input,select,.chip,.invoice-card{touch-action:manipulation}</style>
+a,button,input,select,.chip,.invoice-card{touch-action:manipulation}body.ov .wrap,body.ov .topbar,body.ov .bottom-bar{display:none!important}.sheet-body{overscroll-behavior:contain}</style>
 </head>
 <body>
 <div class="boot-overlay" id="bootOverlay" hidden><div class="boot-circle"></div></div>
-<div class="greeting-overlay" id="greetingOverlay" hidden><div class="greeting-card"><div class="greeting-text" id="greetingText"></div><div class="greeting-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div></div>
+<div class="greeting-overlay" id="greetingOverlay" hidden><div class="greeting-card"><div class="greeting-text" id="greetingText"></div><div class="greeting-ver">آریا صنعت معصومی • نسخه ۲.۱.۳</div></div></div>
 
-<div class="modal-backdrop" id="lockScreen" hidden><div class="modal glass"><div class="modal-icon">🔒</div><h2>ورود به سیستم</h2><p>برای دسترسی به اطلاعات، لطفاً نام و رمز عبور خود را وارد کنید.</p><input id="loginName" type="text" placeholder="نام شما" autocomplete="off"><input id="loginPass" type="password" placeholder="رمز عبور" autocomplete="off"><button class="primary-btn" id="loginBtn" type="button">ورود</button><button class="link-btn" id="resetFromLogin" style="color:#c93b52;margin-top:16px;font-weight:800">فراموشی رمز؟ (ریست کامل سایت)</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div></div>
+<div class="modal-backdrop" id="lockScreen" hidden><div class="modal glass"><div class="modal-icon">🔒</div><h2>ورود به سیستم</h2><p>برای دسترسی به اطلاعات، لطفاً نام و رمز عبور خود را وارد کنید.</p><input id="loginName" type="text" placeholder="نام شما" autocomplete="off"><input id="loginPass" type="password" placeholder="رمز عبور" autocomplete="off"><button class="primary-btn" id="loginBtn" type="button">ورود</button><button class="link-btn" id="resetFromLogin" style="color:#c93b52;margin-top:16px;font-weight:800">فراموشی رمز؟ (ریست کامل سایت)</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۳</div></div></div>
 
-<header class="topbar"><div class="topbar-inner"><div class="logo" id="logoBox">آ</div><div class="brand-text"><h1 id="orgName">آریا صنعت معصومی</h1><span>سامانه مدیریت فاکتور <em>v۲.۱.۲</em></span></div><div class="counter" id="totalCounter">۰</div>
+<header class="topbar"><div class="topbar-inner"><div class="logo" id="logoBox">آ</div><div class="brand-text"><h1 id="orgName">آریا صنعت معصومی</h1><span>سامانه مدیریت فاکتور <em>v۲.۱.۳</em></span></div><div class="counter" id="totalCounter">۰</div>
 <button class="gear" id="settingsBtn" aria-label="تنظیمات"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></button></div></header>
 
 <div class="wrap">
@@ -213,8 +213,8 @@ a,button,input,select,.chip,.invoice-card{touch-action:manipulation}</style>
 <div class="sheet-backdrop" id="sheetBackdrop" hidden><div class="sheet glass" id="sheet" role="dialog" aria-modal="true"></div></div>
 
 <div class="modal-backdrop" id="welcomeModal" hidden><div class="modal glass">
-<div id="wStep1"><div class="modal-icon">👋</div><h2>سلام، خوش اومدی!</h2><p>اسمت چیه؟ می‌خوام باهات صمیمی‌تر باشم.</p><input id="wNameInput" type="text" placeholder="اسم شما" autocomplete="off"><button class="primary-btn" id="wNameNext" type="button">ادامه</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div>
-<div id="wStep2" hidden><div class="modal-icon">🏢</div><h2 id="wStep2Title">خوشحالم!</h2><p>اسم سازمان یا شرکتت چیه؟ این اسم بالای سایت نمایش داده می‌شه.</p><input id="wOrgInput" type="text" placeholder="نام سازمان یا شرکت" autocomplete="off"><button class="primary-btn" id="wOrgNext" type="button">شروع کنیم</button><button class="link-btn" id="wOrgSkip" type="button">استفاده از نام پیش‌فرض</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div></div></div>
+<div id="wStep1"><div class="modal-icon">👋</div><h2>سلام، خوش اومدی!</h2><p>اسمت چیه؟ می‌خوام باهات صمیمی‌تر باشم.</p><input id="wNameInput" type="text" placeholder="اسم شما" autocomplete="off"><button class="primary-btn" id="wNameNext" type="button">ادامه</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۳</div></div>
+<div id="wStep2" hidden><div class="modal-icon">🏢</div><h2 id="wStep2Title">خوشحالم!</h2><p>اسم سازمان یا شرکتت چیه؟ این اسم بالای سایت نمایش داده می‌شه.</p><input id="wOrgInput" type="text" placeholder="نام سازمان یا شرکت" autocomplete="off"><button class="primary-btn" id="wOrgNext" type="button">شروع کنیم</button><button class="link-btn" id="wOrgSkip" type="button">استفاده از نام پیش‌فرض</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۳</div></div></div></div>
 <div class="modal-backdrop" id="passModal" hidden><div class="modal glass"><div class="modal-icon">🔐</div><h2 id="passTitle">تعیین رمز عبور</h2><p id="passDesc">یک رمز عبور برای ورود به برنامه تعیین کنید.</p><input id="newPassInput" type="password" placeholder="رمز عبور جدید" autocomplete="off"><button class="primary-btn" id="savePassBtn" type="button">ذخیره رمز</button><button class="link-btn" id="cancelPassBtn" type="button">انصراف</button></div></div>
 <div class="modal-backdrop" id="backupModal" hidden><div class="modal glass"><div class="modal-icon">💡</div><h2>پیشنهاد دوستانه</h2><p id="backupText"></p><button class="primary-btn" id="backupNow" type="button">بله، پشتیبان بگیر</button><button class="link-btn" id="backupLater" type="button">بعداً یادآوری کن</button></div></div>
 <div class="modal-backdrop" id="expModal" hidden><div class="modal glass"><div class="modal-icon">⏳</div><h2 id="expText">این لینک منقضی شده است</h2><p>برای دریافت لینک جدید با فرستنده تماس بگیرید.</p><button class="primary-btn" id="expOk" type="button">متوجه شدم</button></div></div>
@@ -224,7 +224,7 @@ a,button,input,select,.chip,.invoice-card{touch-action:manipulation}</style>
 
 <script>
 (function(){'use strict';
-const V='2.1.2',VF='۲.۱.۲',$=(s,e)=>(e||document).querySelector(s),$$=(s,e)=>[].slice.call((e||document).querySelectorAll(s));
+const V='2.1.3',VF='۲.۱.۳',$=(s,e)=>(e||document).querySelector(s),$$=(s,e)=>[].slice.call((e||document).querySelectorAll(s));
 const FD='۰۱۲۳۴۵۶۷۸۹',AD='٠١٢٣٤٥٦٧٨٩';
 const fa=v=>String(v==null?'':v).replace(/\d/g,d=>FD[d]);
 const en=v=>String(v==null?'':v).replace(/[۰-۹]/g,d=>FD.indexOf(d)).replace(/[٠-٩]/g,d=>AD.indexOf(d));
@@ -263,7 +263,7 @@ document.addEventListener('input',function(e){const t=e.target;if(!t||!/^(INPUT|
 document.addEventListener('focusin',e=>{if(/^(INPUT|TEXTAREA)$/.test(e.target.tagName))document.documentElement.classList.add('kb')},{passive:true});
 document.addEventListener('focusout',()=>setTimeout(()=>{if(!/^(INPUT|TEXTAREA)$/.test((document.activeElement||{}).tagName||''))document.documentElement.classList.remove('kb')},120),{passive:true});
 document.addEventListener('keydown',e=>{if(e.key!=='Enter')return;const t=e.target;if(!t||t.tagName!=='INPUT')return;if(t.closest('#invoiceForm')){e.preventDefault();const L=$$('#invoiceForm input[type=text]'),n=L.indexOf(t);if(L[n+1])L[n+1].focus();else t.blur()}else if(t.id==='searchInput'||t.id==='dateFilter'){e.preventDefault();t.blur()}});
-function lockScroll(){const o=['#sheetBackdrop','#welcomeModal','#backupModal','#printOverlay','#lockScreen','#passModal','#expModal'].some(s=>!$(s).hidden);document.body.style.overflow=o?'hidden':''}
+let ovOn=false,ovY=0;function lockScroll(){const o=['#sheetBackdrop','#welcomeModal','#backupModal','#printOverlay','#lockScreen','#passModal','#expModal'].some(s=>!$(s).hidden);document.body.style.overflow=o?'hidden':'';if(o&&!ovOn){ovY=window.scrollY;document.body.classList.add('ov');ovOn=true}else if(!o&&ovOn){document.body.classList.remove('ov');ovOn=false;window.scrollTo(0,ovY)}}
 function header(){const n=org||'آریا صنعت معصومی';$('#orgName').textContent=n;$('#logoBox').textContent=n.trim().charAt(0)||'آ';$('#totalCounter').textContent=fa(inv.length)}
 /* لیست */
 const st={lim:30,edit:null,q:'',f:'all',d:'',ft:'cr',ht:'',hc:''};
