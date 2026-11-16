@@ -7,25 +7,25 @@
 <title>آریا صنعت معصومی | مدیریت فاکتور</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none!important}
 :root{--b9:#0b2a5b;--b8:#12488f;--b7:#1554a8;--b6:#1f6fe0;--b5:#3b8bff;--b2:#b9d6ff;--b1:#e3eefe;--tx:#0f2547;--mu:#6b86a8;--ln:rgba(160,195,240,.55);--gl:linear-gradient(160deg,rgba(255,255,255,.88),rgba(255,255,255,.58));--gs:rgba(255,255,255,.9);--sh:0 12px 34px -14px rgba(23,74,150,.35);--r:22px;--g1:linear-gradient(135deg,#4f9bff,#1554a8)}
 html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
-body{font-family:'Vazirmatn',system-ui,Tahoma,sans-serif;color:var(--tx);min-height:100dvh;background:radial-gradient(900px 520px at 100% -8%,#cfe3ff 0%,rgba(207,227,255,0) 62%),radial-gradient(760px 460px at -12% 8%,#e6f1ff 0%,rgba(230,241,255,0) 58%),linear-gradient(180deg,#f5faff 0%,#e9f3ff 45%,#fff 100%);background-attachment:fixed;-webkit-font-smoothing:antialiased}
-body.kb .glass,body.kb .topbar,body.kb .search-card,body.kb .bottom-bar{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:0 4px 12px rgba(0,0,0,.05)!important;background:#fff!important}
-body.kb .blob{display:none!important}
+body{font-family:'Vazirmatn',system-ui,Tahoma,sans-serif;color:var(--tx);background:radial-gradient(900px 520px at 100% -8%,#cfe3ff 0%,rgba(207,227,255,0) 62%),radial-gradient(760px 460px at -12% 8%,#e6f1ff 0%,rgba(230,241,255,0) 58%),linear-gradient(180deg,#f5faff 0%,#e9f3ff 45%,#fff 100%);background-repeat:no-repeat;background-color:#fff;-webkit-font-smoothing:antialiased}
+
+
 .bg-decor{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
 .blob{position:absolute;border-radius:50%;filter:blur(58px);opacity:.5}
 .b1{width:260px;height:260px;background:#a9cfff;top:-70px;left:-60px}.b2{width:220px;height:220px;background:#c9e2ff;top:38%;right:-80px}.b3{width:300px;height:300px;background:#dbeaff;bottom:-110px;left:20%}
 .wrap{max-width:560px;margin:0 auto;padding:0 16px 118px;width:100%}
 .boot-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;display:flex;align-items:center;justify-content:center;animation:bootOut 800ms cubic-bezier(.4,0,.2,1) forwards}
-.boot-circle{width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,#fff 0%,#4f9bff 40%,#1554a8 100%);box-shadow:0 0 80px 30px rgba(59,139,255,.6);transform:scale(0);animation:bootScale 800ms cubic-bezier(.2,.8,.3,1) forwards}
+.boot-circle{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,#fff 0%,#4f9bff 38%,rgba(59,139,255,.55) 56%,rgba(59,139,255,0) 72%);transform:scale(0);animation:bootScale 800ms cubic-bezier(.2,.8,.3,1) forwards;will-change:transform,opacity}
 @keyframes bootScale{0%{transform:scale(0);opacity:1}40%{transform:scale(1.5);opacity:1}100%{transform:scale(15);opacity:0}}
 @keyframes bootOut{0%,70%{opacity:1}100%{opacity:0;visibility:hidden}}
 .greeting-overlay{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;pointer-events:none;background:radial-gradient(circle at 50% 50%,rgba(79,155,255,.22) 0%,transparent 60%);animation:greetFade 2800ms ease-in-out both}
-.greeting-card{background:linear-gradient(160deg,rgba(255,255,255,.99),rgba(240,248,255,.96));border:1px solid #fff;border-radius:24px;padding:26px 30px;box-shadow:0 32px 74px -22px rgba(21,84,168,.6);text-align:center;max-width:88vw;animation:greetPop 2800ms cubic-bezier(.2,.9,.3,1) both}
+.greeting-card{background:linear-gradient(160deg,rgba(255,255,255,.99),rgba(240,248,255,.96));border:1px solid #fff;border-radius:24px;padding:26px 30px;box-shadow:0 16px 36px -18px rgba(21,84,168,.5);text-align:center;max-width:88vw;animation:greetPop 2800ms cubic-bezier(.2,.9,.3,1) both}
 .greeting-text{font-size:1.3rem;font-weight:800;color:var(--b9);line-height:1.55;white-space:pre-wrap}
 .greeting-ver{font-size:.68rem;font-weight:600;color:var(--mu);margin-top:12px;opacity:.8}
 @keyframes greetFade{0%{opacity:0}10%,85%{opacity:1}100%{opacity:0;visibility:hidden}}
@@ -36,7 +36,7 @@ body.kb .blob{display:none!important}
 .topbar-inner{animation:softDown .55s cubic-bezier(.2,.8,.3,1) both}
 .search-card{animation:softRise .6s .12s cubic-bezier(.2,.8,.3,1) both}
 .bottom-bar{animation:softUp .55s .22s cubic-bezier(.2,.8,.3,1) both}
-.topbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(255,255,255,.93),rgba(255,255,255,.64));backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid rgba(255,255,255,.85);box-shadow:0 8px 24px -22px rgba(15,60,130,.9)}
+.topbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(255,255,255,.93),rgba(255,255,255,.64));border-bottom:1px solid rgba(255,255,255,.85);box-shadow:0 8px 24px -22px rgba(15,60,130,.9)}
 .topbar-inner{max-width:560px;margin:0 auto;padding:10px 14px;display:flex;align-items:center;gap:9px}
 .logo{width:42px;height:42px;flex:0 0 42px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:1.15rem;color:#fff;background:var(--g1);box-shadow:0 10px 20px -10px rgba(21,84,168,.95),inset 0 1px 0 rgba(255,255,255,.45)}
 .brand-text{flex:1;min-width:0}
@@ -45,7 +45,7 @@ body.kb .blob{display:none!important}
 .brand-text em{font-style:normal;color:var(--b6);font-weight:700}
 .counter{min-width:38px;height:38px;padding:0 10px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--b5),var(--b7));box-shadow:0 4px 10px rgba(21,84,168,.25);flex:0 0 auto}
 .gear{flex:0 0 auto;width:36px;height:36px;border-radius:12px;border:1px solid rgba(185,214,255,.9);background:rgba(255,255,255,.9);color:var(--b7);display:grid;place-items:center;cursor:pointer}
-.glass{background:var(--gl);border:1px solid var(--gs);border-radius:var(--r);box-shadow:var(--sh),inset 0 1px 0 rgba(255,255,255,.95);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%)}
+.glass{background:var(--gl);border:1px solid var(--gs);border-radius:var(--r);box-shadow:var(--sh),inset 0 1px 0 rgba(255,255,255,.95);}
 .search-card{background:#fff;border:1px solid rgba(160,195,240,.4);border-radius:18px;box-shadow:0 8px 24px -10px rgba(23,74,150,.15);margin-top:16px;width:100%;padding:10px 14px;display:flex;flex-direction:column;gap:10px}
 .search-top-row{display:flex;align-items:center;height:44px;width:100%}
 .search-input-wrap{flex:1;display:flex;align-items:center;gap:8px;min-width:0}
@@ -98,14 +98,14 @@ input.invalid{border-color:#f09aa6!important;box-shadow:0 0 0 4px rgba(240,154,1
 .date-wrap,.field-row{display:flex;gap:8px}.date-wrap input{flex:1;min-width:0;text-align:center;font-weight:700}.field-row input{flex:1;min-width:0}
 .mini-btn{flex:0 0 auto;font-family:inherit;font-size:.78rem;font-weight:800;color:var(--b7);background:rgba(227,238,254,.95);border:1px solid rgba(185,214,255,.95);border-radius:13px;padding:0 14px;cursor:pointer;min-height:48px}
 .form-note{text-align:center;font-size:.76rem;color:var(--mu);margin:4px 0 10px}
-.bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(255,255,255,.97) 30%,rgba(255,255,255,.72) 70%,rgba(255,255,255,0));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(255,255,255,.97) 30%,rgba(255,255,255,.72) 70%,rgba(255,255,255,0));}
 .bottom-inner{max-width:560px;margin:0 auto;display:flex;gap:10px}
 .primary-btn{flex:1;border:0;border-radius:17px;padding:16px;font-family:inherit;font-size:.98rem;font-weight:800;color:#fff;cursor:pointer;background:var(--g1);box-shadow:0 14px 28px -12px rgba(21,84,168,.95),inset 0 1px 0 rgba(255,255,255,.4)}
 .primary-btn:active{transform:scale(.975)}
 .secondary-btn{flex:0 0 auto;border:1px solid var(--ln);border-radius:17px;padding:16px 20px;font-family:inherit;font-size:.92rem;font-weight:700;color:var(--b7);background:rgba(255,255,255,.9);cursor:pointer}
-.sheet-backdrop{position:fixed;inset:0;z-index:90;background:rgba(12,40,80,.35);backdrop-filter:blur(4px);display:flex;align-items:flex-end;justify-content:center;animation:fade .2s both}
+.sheet-backdrop{position:fixed;inset:0;z-index:90;background:rgba(12,40,80,.35);display:flex;align-items:flex-end;justify-content:center;animation:fade .2s both}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-.sheet{width:100%;max-width:560px;max-height:90dvh;border-radius:26px 26px 0 0;overflow:hidden;display:flex;flex-direction:column;animation:slideUp .28s cubic-bezier(.2,.9,.3,1) both;padding-bottom:env(safe-area-inset-bottom)}
+.sheet{width:100%;max-width:560px;max-height:90vh;border-radius:26px 26px 0 0;overflow:hidden;display:flex;flex-direction:column;animation:slideUp .28s cubic-bezier(.2,.9,.3,1) both;padding-bottom:env(safe-area-inset-bottom)}
 @keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}
 .sheet-handle{width:44px;height:5px;border-radius:99px;background:#c7daf5;margin:10px auto 4px;flex:0 0 auto}
 .sheet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 18px 12px;flex:0 0 auto}
@@ -133,7 +133,7 @@ input.invalid{border-color:#f09aa6!important;box-shadow:0 0 0 4px rgba(240,154,1
 .wh-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 6px 5px 11px;background:rgba(227,238,254,.95);border:1px solid rgba(185,214,255,.95);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--b8)}
 .wh-chip button{width:22px;height:22px;border-radius:50%;border:0;background:rgba(201,59,82,.12);color:#c93b52;font-size:1.05rem;font-weight:800;cursor:pointer;display:grid;place-items:center;padding:0;font-family:inherit}
 .wh-add{display:flex;gap:8px}.wh-add input{flex:1;min-width:0;font-size:.85rem;padding:10px 12px;min-height:42px;border-radius:11px}.wh-add button{min-height:42px;font-size:.78rem}
-.modal-backdrop{position:fixed;inset:0;z-index:110;background:rgba(12,40,80,.42);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fade .22s both}
+.modal-backdrop{position:fixed;inset:0;z-index:110;background:rgba(12,40,80,.42);display:flex;align-items:center;justify-content:center;padding:20px;animation:fade .22s both}
 .modal{width:100%;max-width:420px;padding:26px 22px 20px;text-align:center;border-radius:26px;animation:pop .28s cubic-bezier(.2,.9,.3,1) both}
 @keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:none}}
 .modal-icon{font-size:2.2rem;margin-bottom:8px}.modal h2{margin:0 0 10px;font-size:1.08rem;font-weight:800;color:var(--b9)}
@@ -169,16 +169,17 @@ input.invalid{border-color:#f09aa6!important;box-shadow:0 0 0 4px rgba(240,154,1
 @media(max-width:520px){.inv-head{padding:18px 16px}.inv-meta{grid-template-columns:1fr;padding:14px 16px}.inv-section{padding:12px 16px 6px}.inv-table{width:calc(100% - 32px);margin:0 16px 16px}.inv-sign{margin:0 16px}}
 @media(max-width:360px){.row-2{grid-template-columns:1fr}.date-input-wrap{width:120px}}
 @media print{@page{size:A4;margin:10mm}body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}body *{visibility:hidden!important}.print-overlay,.print-overlay *{visibility:visible!important}.print-overlay{position:absolute!important;left:0;top:0;width:100%;background:#fff!important;padding:0!important}.print-bar{display:none!important}.inv-paper{box-shadow:none!important;border:none!important;max-width:100%!important;margin:0!important;border-radius:0}.gp{page-break-after:always;break-after:page}.gp:last-child{page-break-after:auto;break-after:auto}}
-body.locked .wrap,body.locked .topbar,body.locked .bottom-bar{display:none!important}.print-bar{flex-wrap:wrap}body.kb .modal-backdrop,body.kb .sheet-backdrop{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}@media print{html,body{overflow:visible!important;height:auto!important}}</style>
+body.locked .wrap,body.locked .topbar,body.locked .bottom-bar{display:none!important}.print-bar{flex-wrap:wrap}@media print{html,body{overflow:visible!important;height:auto!important}}.glass{box-shadow:0 6px 18px -12px rgba(23,74,150,.35),inset 0 1px 0 rgba(255,255,255,.95)}.sheet.glass,.modal.glass{background:#f7faff}.topbar{background:rgba(255,255,255,.96)}
+.invoice-card{content-visibility:auto;contain-intrinsic-size:auto 150px}html.kb .bottom-bar{padding:6px 12px}html.kb .bottom-bar .primary-btn,html.kb .bottom-bar .secondary-btn{padding:10px 16px;border-radius:13px}.bottom-bar{transform:translateZ(0)}
+a,button,input,select,.chip,.invoice-card{touch-action:manipulation}</style>
 </head>
 <body>
-<div class="bg-decor"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
 <div class="boot-overlay" id="bootOverlay" hidden><div class="boot-circle"></div></div>
-<div class="greeting-overlay" id="greetingOverlay" hidden><div class="greeting-card"><div class="greeting-text" id="greetingText"></div><div class="greeting-ver">آریا صنعت معصومی • نسخه ۲.۰.۰</div></div></div>
+<div class="greeting-overlay" id="greetingOverlay" hidden><div class="greeting-card"><div class="greeting-text" id="greetingText"></div><div class="greeting-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div></div>
 
-<div class="modal-backdrop" id="lockScreen" hidden><div class="modal glass"><div class="modal-icon">🔒</div><h2>ورود به سیستم</h2><p>برای دسترسی به اطلاعات، لطفاً نام و رمز عبور خود را وارد کنید.</p><input id="loginName" type="text" placeholder="نام شما" autocomplete="off"><input id="loginPass" type="password" placeholder="رمز عبور" autocomplete="off"><button class="primary-btn" id="loginBtn" type="button">ورود</button><button class="link-btn" id="resetFromLogin" style="color:#c93b52;margin-top:16px;font-weight:800">فراموشی رمز؟ (ریست کامل سایت)</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۰.۰</div></div></div>
+<div class="modal-backdrop" id="lockScreen" hidden><div class="modal glass"><div class="modal-icon">🔒</div><h2>ورود به سیستم</h2><p>برای دسترسی به اطلاعات، لطفاً نام و رمز عبور خود را وارد کنید.</p><input id="loginName" type="text" placeholder="نام شما" autocomplete="off"><input id="loginPass" type="password" placeholder="رمز عبور" autocomplete="off"><button class="primary-btn" id="loginBtn" type="button">ورود</button><button class="link-btn" id="resetFromLogin" style="color:#c93b52;margin-top:16px;font-weight:800">فراموشی رمز؟ (ریست کامل سایت)</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div></div>
 
-<header class="topbar"><div class="topbar-inner"><div class="logo" id="logoBox">آ</div><div class="brand-text"><h1 id="orgName">آریا صنعت معصومی</h1><span>سامانه مدیریت فاکتور <em>v۲.۰.۰</em></span></div><div class="counter" id="totalCounter">۰</div>
+<header class="topbar"><div class="topbar-inner"><div class="logo" id="logoBox">آ</div><div class="brand-text"><h1 id="orgName">آریا صنعت معصومی</h1><span>سامانه مدیریت فاکتور <em>v۲.۱.۲</em></span></div><div class="counter" id="totalCounter">۰</div>
 <button class="gear" id="settingsBtn" aria-label="تنظیمات"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></button></div></header>
 
 <div class="wrap">
@@ -212,8 +213,8 @@ body.locked .wrap,body.locked .topbar,body.locked .bottom-bar{display:none!impor
 <div class="sheet-backdrop" id="sheetBackdrop" hidden><div class="sheet glass" id="sheet" role="dialog" aria-modal="true"></div></div>
 
 <div class="modal-backdrop" id="welcomeModal" hidden><div class="modal glass">
-<div id="wStep1"><div class="modal-icon">👋</div><h2>سلام، خوش اومدی!</h2><p>اسمت چیه؟ می‌خوام باهات صمیمی‌تر باشم.</p><input id="wNameInput" type="text" placeholder="اسم شما" autocomplete="off"><button class="primary-btn" id="wNameNext" type="button">ادامه</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۰.۰</div></div>
-<div id="wStep2" hidden><div class="modal-icon">🏢</div><h2 id="wStep2Title">خوشحالم!</h2><p>اسم سازمان یا شرکتت چیه؟ این اسم بالای سایت نمایش داده می‌شه.</p><input id="wOrgInput" type="text" placeholder="نام سازمان یا شرکت" autocomplete="off"><button class="primary-btn" id="wOrgNext" type="button">شروع کنیم</button><button class="link-btn" id="wOrgSkip" type="button">استفاده از نام پیش‌فرض</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۰.۰</div></div></div></div>
+<div id="wStep1"><div class="modal-icon">👋</div><h2>سلام، خوش اومدی!</h2><p>اسمت چیه؟ می‌خوام باهات صمیمی‌تر باشم.</p><input id="wNameInput" type="text" placeholder="اسم شما" autocomplete="off"><button class="primary-btn" id="wNameNext" type="button">ادامه</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div>
+<div id="wStep2" hidden><div class="modal-icon">🏢</div><h2 id="wStep2Title">خوشحالم!</h2><p>اسم سازمان یا شرکتت چیه؟ این اسم بالای سایت نمایش داده می‌شه.</p><input id="wOrgInput" type="text" placeholder="نام سازمان یا شرکت" autocomplete="off"><button class="primary-btn" id="wOrgNext" type="button">شروع کنیم</button><button class="link-btn" id="wOrgSkip" type="button">استفاده از نام پیش‌فرض</button><div class="modal-ver">آریا صنعت معصومی • نسخه ۲.۱.۲</div></div></div></div>
 <div class="modal-backdrop" id="passModal" hidden><div class="modal glass"><div class="modal-icon">🔐</div><h2 id="passTitle">تعیین رمز عبور</h2><p id="passDesc">یک رمز عبور برای ورود به برنامه تعیین کنید.</p><input id="newPassInput" type="password" placeholder="رمز عبور جدید" autocomplete="off"><button class="primary-btn" id="savePassBtn" type="button">ذخیره رمز</button><button class="link-btn" id="cancelPassBtn" type="button">انصراف</button></div></div>
 <div class="modal-backdrop" id="backupModal" hidden><div class="modal glass"><div class="modal-icon">💡</div><h2>پیشنهاد دوستانه</h2><p id="backupText"></p><button class="primary-btn" id="backupNow" type="button">بله، پشتیبان بگیر</button><button class="link-btn" id="backupLater" type="button">بعداً یادآوری کن</button></div></div>
 <div class="modal-backdrop" id="expModal" hidden><div class="modal glass"><div class="modal-icon">⏳</div><h2 id="expText">این لینک منقضی شده است</h2><p>برای دریافت لینک جدید با فرستنده تماس بگیرید.</p><button class="primary-btn" id="expOk" type="button">متوجه شدم</button></div></div>
@@ -223,7 +224,7 @@ body.locked .wrap,body.locked .topbar,body.locked .bottom-bar{display:none!impor
 
 <script>
 (function(){'use strict';
-const V='2.0.0',VF='۲.۰.۰',$=(s,e)=>(e||document).querySelector(s),$$=(s,e)=>[].slice.call((e||document).querySelectorAll(s));
+const V='2.1.2',VF='۲.۱.۲',$=(s,e)=>(e||document).querySelector(s),$$=(s,e)=>[].slice.call((e||document).querySelectorAll(s));
 const FD='۰۱۲۳۴۵۶۷۸۹',AD='٠١٢٣٤٥٦٧٨٩';
 const fa=v=>String(v==null?'':v).replace(/\d/g,d=>FD[d]);
 const en=v=>String(v==null?'':v).replace(/[۰-۹]/g,d=>FD.indexOf(d)).replace(/[٠-٩]/g,d=>AD.indexOf(d));
@@ -242,7 +243,7 @@ const dS=s=>s?fa(s):'—';
 const dL=s=>{const n=nd(s);if(!n)return'—';const p=n.split('/').map(Number);return fa(p[2])+' '+MN[p[1]-1]+' '+fa(p[0])};
 const loose=s=>en(s).replace(/[.\-–—\\]/g,'/').replace(/\s+/g,'').split('/').filter(Boolean).map(x=>String(parseInt(x,10)||0)).join('/');
 /* داده */
-const K={inv:'aria2_inv',org:'aria2_org',user:'aria2_user',wh:'aria2_wh',cats:'aria2_cats',pw:'aria2_pw',pa:'aria2_pa',ba:'aria2_ba',day:'aria2_day',fl:'aria2_fl'};
+const K={inv:'aria2_inv',org:'aria2_org',user:'aria2_user',wh:'aria2_wh',cats:'aria2_cats',pw:'aria2_pw',pa:'aria2_pa',ba:'aria2_ba',day:'aria2_day',fl:'aria2_fl',ib:'aria2_ib',pv:'aria2_pv',cr:'aria2_inv_corrupt'};
 const DEF=[{k:'chassis',l:'شاسی'},{k:'housing',l:'هوزینگ',t:'h'},{k:'pump',l:'پمپ',t:'i'},{k:'tank',l:'مخزن'},{k:'sv',l:'شیر برقی'},{k:'mem',l:'ممبران'},{k:'inlet',l:'شیر ورودی و سه راهی'},{k:'label',l:'نوع لیبل',t:'i'},{k:'carton',l:'نوع کارتون',t:'i'}];
 const DW={chassis:['۲.۵','۱.۵','بدون گیج','فلزی ۱.۵','فلزی ۲.۵','فلزی بدون پایه'],tank:['چهار گالن','۳.۲ گالن'],sv:['تولیدی','وارداتی'],mem:['۱۳ لایه','۱۱ لایه'],inlet:['۱ تیکه','۲ تیکه']};
 let inv=[],org='',user='',wh={},custom=[],pw='',lastItems=[];
@@ -251,22 +252,26 @@ const lset=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){toast('ذ�
 const jp=(k,d)=>{try{return JSON.parse(ls(k,'null'))||d}catch(e){return d}};
 function normWh(r){const o={};cats().forEach(c=>{if(c.t==='h')return;const a=r&&Array.isArray(r[c.k])?r[c.k]:(DW[c.k]||[]);o[c.k]=[];a.forEach(v=>{v=String(v).trim();if(v&&!o[c.k].some(x=>nm(x)===nm(v)))o[c.k].push(v)})});return o}
 function clean(r){if(!r||typeof r!=='object')return null;const s=v=>String(v==null?'':v).trim().slice(0,300),o={id:s(r.id)||('inv_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)),at:s(r.at)||new Date().toISOString(),no:s(r.no),buyer:s(r.buyer),city:s(r.city),hav:s(r.hav),model:s(r.model),qty:en(s(r.qty)),cr:nd(r.cr)||todayJ(),dl:nd(r.dl),p:{}};if(r.p&&typeof r.p==='object')Object.keys(r.p).forEach(k=>{if(/^[A-Za-z0-9_]+$/.test(k)&&s(r.p[k]))o.p[k]=s(r.p[k])});return o}
-function load(){org=ls(K.org,'');user=ls(K.user,'');pw=ls(K.pw,'');custom=jp(K.cats,[]).filter(c=>c&&c.k&&c.l&&/^[A-Za-z0-9_]+$/.test(String(c.k)));const a=jp(K.inv,[]);inv=(Array.isArray(a)?a:[]).map(clean).filter(Boolean);wh=normWh(jp(K.wh,null))}
-const pInv=()=>lset(K.inv,JSON.stringify(inv)),pWh=()=>lset(K.wh,JSON.stringify(wh)),pCats=()=>lset(K.cats,JSON.stringify(custom));
+function loadInv(){const raw=ls(K.inv,null);if(raw===null)return[];let a=null;try{a=JSON.parse(raw)}catch(e){}
+if(Array.isArray(a))return a;lset(K.cr,raw);try{a=JSON.parse(ls(K.ib,'null'))}catch(e){a=null}if(Array.isArray(a)){setTimeout(()=>toast('اطلاعات از نسخه ذخیره‌شده قبلی بازیابی شد'),1200);return a}setTimeout(()=>toast('⚠️ اطلاعات قبلی ناخوانا بود و نسخه خام آن نگه داشته شد'),1200);return[]}
+function load(){org=ls(K.org,'');user=ls(K.user,'');pw=ls(K.pw,'');custom=jp(K.cats,[]).filter(c=>c&&c.k&&c.l&&/^[A-Za-z0-9_]+$/.test(String(c.k)));const a=loadInv();inv=a.map(clean).filter(Boolean);wh=normWh(jp(K.wh,null))}
+const pInv=()=>{try{const c=localStorage.getItem(K.inv);if(c)localStorage.setItem(K.ib,c)}catch(e){}return lset(K.inv,JSON.stringify(inv))},pWh=()=>lset(K.wh,JSON.stringify(wh)),pCats=()=>lset(K.cats,JSON.stringify(custom));
 const rows=i=>[['مدل دستگاه',i.model],['تعداد سفارش',i.qty?fa(i.qty):'']].concat(cats().map(c=>[c.l,i.p[c.k]])).filter(r=>r[1]&&String(r[1]).trim());
 /* اعداد فارسی لحظه‌ای */
 document.addEventListener('input',function(e){const t=e.target;if(!t||!/^(INPUT|TEXTAREA)$/.test(t.tagName))return;const ty=(t.type||'text').toLowerCase();if(ty==='file'||t.readOnly)return;const v=t.value;if(!/[0-9٠-٩]/.test(v))return;const n=fa(en(v));if(n!==v){const p=t.selectionStart;t.value=n;try{t.setSelectionRange(p,p)}catch(x){}}},true);
 /* رفع لگ کیبورد */
-document.addEventListener('focusin',e=>{if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))document.body.classList.add('kb')});
-document.addEventListener('focusout',()=>setTimeout(()=>{if(!/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement||{}).tagName||''))document.body.classList.remove('kb')},150));
+document.addEventListener('focusin',e=>{if(/^(INPUT|TEXTAREA)$/.test(e.target.tagName))document.documentElement.classList.add('kb')},{passive:true});
+document.addEventListener('focusout',()=>setTimeout(()=>{if(!/^(INPUT|TEXTAREA)$/.test((document.activeElement||{}).tagName||''))document.documentElement.classList.remove('kb')},120),{passive:true});
+document.addEventListener('keydown',e=>{if(e.key!=='Enter')return;const t=e.target;if(!t||t.tagName!=='INPUT')return;if(t.closest('#invoiceForm')){e.preventDefault();const L=$$('#invoiceForm input[type=text]'),n=L.indexOf(t);if(L[n+1])L[n+1].focus();else t.blur()}else if(t.id==='searchInput'||t.id==='dateFilter'){e.preventDefault();t.blur()}});
 function lockScroll(){const o=['#sheetBackdrop','#welcomeModal','#backupModal','#printOverlay','#lockScreen','#passModal','#expModal'].some(s=>!$(s).hidden);document.body.style.overflow=o?'hidden':''}
 function header(){const n=org||'آریا صنعت معصومی';$('#orgName').textContent=n;$('#logoBox').textContent=n.trim().charAt(0)||'آ';$('#totalCounter').textContent=fa(inv.length)}
 /* لیست */
-const st={edit:null,q:'',f:'all',d:'',ft:'cr',ht:'',hc:''};
+const st={lim:30,edit:null,q:'',f:'all',d:'',ft:'cr',ht:'',hc:''};
 function card(i){const hn=!!i.no,tags=Object.keys(i.p).map(k=>i.p[k]),m=[];if(i.city)m.push('<span>📍 '+esc(i.city)+'</span>');if(i.model)m.push('<span>⚙️ '+esc(i.model)+(i.qty?' × '+fa(i.qty):'')+'</span>');return'<article class="invoice-card glass" data-id="'+esc(i.id)+'"><div class="card-top"><span class="badge'+(hn?'':' nonum')+'">'+(hn?'فاکتور '+esc(fa(i.no)):'بدون شماره فاکتور')+'</span><span class="date-pill">'+dS(i.cr)+'</span></div><h3 class="buyer">'+(esc(i.buyer)||'بدون نام')+'</h3>'+(m.length?'<div class="meta">'+m.join('')+'</div>':'')+(tags.length?'<div class="tags">'+tags.map(t=>'<span class="tag">'+esc(fa(t))+'</span>').join('')+'</div>':'')+'<div class="card-foot"><span class="delivery">'+(i.dl?'تحویل: '+dS(i.dl):'تاریخ تحویل ثبت نشده')+'</span><span class="chev">‹</span></div></article>'}
-function renderList(){const q=nm(st.q),df=loose(st.d);let it=inv.slice().sort((a,b)=>String(b.at).localeCompare(String(a.at)));if(df)it=it.filter(i=>{const a=loose(i[st.ft]||'').split('/');return df.split('/').every((v,n)=>a[n]===v)});
-if(q)it=it.filter(i=>st.f==='all'?nm([i.no,i.buyer,i.city,i.hav,i.model,i.qty,i.cr,i.dl].concat(Object.keys(i.p).map(k=>i.p[k])).join(' ')).indexOf(q)!==-1:nm(i[st.f]).indexOf(q)!==-1);
-lastItems=it;const hf=!!(q||df);$('#invoiceList').innerHTML=it.length?it.map(card).join(''):'<div class="empty glass"><div class="empty-icon">'+(hf?'🔍':'🧾')+'</div><h3>'+(hf?'نتیجه‌ای پیدا نشد':'هنوز فاکتوری ثبت نشده')+'</h3><p>'+(hf?'عبارت جستجو یا فیلتر تاریخ را تغییر بده.':'با دکمه «صدور فاکتور جدید» اولین فاکتور رو بساز.')+'</p></div>';
+const hc=new WeakMap(),hay=i=>{let h=hc.get(i);if(h===undefined){h=nm([i.no,i.buyer,i.city,i.hav,i.model,i.qty,i.cr,i.dl].concat(Object.keys(i.p).map(k=>i.p[k])).join(' '));hc.set(i,h)}return h};
+function renderList(keep){if(!keep)st.lim=30;const q=nm(st.q),df=loose(st.d);let it=inv.slice().sort((a,b)=>String(b.at).localeCompare(String(a.at)));if(df)it=it.filter(i=>{const a=loose(i[st.ft]||'').split('/');return df.split('/').every((v,n)=>a[n]===v)});
+if(q)it=it.filter(i=>st.f==='all'?hay(i).indexOf(q)!==-1:nm(i[st.f]).indexOf(q)!==-1);
+lastItems=it;const hf=!!(q||df);$('#invoiceList').innerHTML=it.length?it.slice(0,st.lim).map(card).join('')+(it.length>st.lim?'<button type="button" class="ghost-btn more-btn" style="width:100%;height:46px">نمایش بیشتر ('+fa(it.length-st.lim)+' فاکتور دیگر)</button>':''):'<div class="empty glass"><div class="empty-icon">'+(hf?'🔍':'🧾')+'</div><h3>'+(hf?'نتیجه‌ای پیدا نشد':'هنوز فاکتوری ثبت نشده')+'</h3><p>'+(hf?'عبارت جستجو یا فیلتر تاریخ را تغییر بده.':'با دکمه «صدور فاکتور جدید» اولین فاکتور رو بساز.')+'</p></div>';
 $('#resultCount').textContent=it.length?fa(it.length)+' مورد':'';$('#totalCounter').textContent=fa(inv.length);$('#clearSearch').hidden=!st.q;$('#clearFilters').hidden=!(st.d||st.q)}
 function view(n){$('#listView').hidden=n!=='list';$('#formView').hidden=n!=='form';$('#listBar').hidden=n!=='list';$('#formBar').hidden=n!=='form';window.scrollTo({top:0});if(n==='list')renderList()}
 /* فرم */
@@ -348,6 +353,7 @@ function whHTML(){const sec=cats().filter(c=>c.t!=='h').map(c=>{const it=wh[c.k]
 return sh('📦 انبار من','<p class="hint" style="text-align:right">مدل‌های قطعات رو اینجا مدیریت کن. دسته‌بندی جدید خودکار به فرم فاکتور اضافه می‌شه.</p>'+sec+'<div class="wh-section" style="border-style:dashed"><div class="wh-section-title">دسته‌بندی جدید</div><div class="wh-add"><input type="text" id="newCat" placeholder="مثلاً درپوش"><button type="button" class="mini-btn" data-act="addCat">ساخت</button></div></div>')}
 const refWh=()=>{const b=$('#sheet .sheet-body'),t=b?b.scrollTop:0;openSheet(whHTML());const n=$('#sheet .sheet-body');if(n)n.scrollTop=t};
 function addItem(k){const e=$('[data-add-input="'+k+'"]'),v=e.value.trim();if(!v){toast('نام مدل رو وارد کن');e.focus();return}if(!wh[k])wh[k]=[];if(wh[k].some(x=>nm(x)===nm(v))){toast('این مدل قبلاً ثبت شده');e.value='';return}wh[k].push(v);if(!pWh())return;vib(10);toast('✓ مدل اضافه شد');setTimeout(refWh,40)}
+function undo(){let d;try{d=JSON.parse(ls(K.pv,''))}catch(e){toast('نسخه قبلی ناخوانا است');return}if(!d||!confirm('اطلاعات فعلی با نسخه قبل از آخرین جایگزینی عوض شود؟ (این کار هم قابل برگشت است)'))return;applyData(d,true);header();renderList();closeSheet();toast('✓ اطلاعات قبلی بازگردانی شد')}
 function addCat(){const l=$('#newCat').value.trim();if(l.length<2){toast('نام دسته را وارد کنید');return}if(cats().some(c=>nm(c.l)===nm(l))){toast('این دسته وجود دارد');return}const k='c'+Date.now().toString(36);custom.push({k:k,l:l});wh[k]=[];pCats();pWh();vib(10);toast('✓ دسته جدید ساخته شد');setTimeout(refWh,40)}
 /* آمار */
 function openStats(){openSheet(sh('📊 آمار کالا','<div class="field"><label>از تاریخ (شمسی)</label><input type="text" id="stF" placeholder="۱۴۰۳/۰۱/۰۱" dir="ltr"></div><div class="field"><label>تا تاریخ (شمسی)</label><input type="text" id="stT" placeholder="۱۴۰۳/۱۲/۲۹" dir="ltr"></div><div class="field"><label>دسته‌بندی کالا</label><select id="stC">'+cats().map(c=>'<option value="'+esc(c.k)+'">'+esc(c.l)+'</option>').join('')+'</select></div><div class="field"><label>مدل کالا <span class="opt">(اختیاری)</span></label><select id="stM"></select></div><button class="primary-btn" id="stGo" type="button" style="width:100%;margin-top:10px">محاسبه آمار</button><div id="stR" style="margin-top:16px;padding:14px;background:rgba(227,238,254,.8);border-radius:14px;border:1px solid var(--b2);display:none;text-align:center"><h3 style="margin:0 0 8px;font-size:.9rem;color:var(--b8)">نتیجه آمار</h3><div style="font-size:1.4rem;font-weight:800;color:var(--b9)" id="stTot"></div><div style="font-size:.8rem;color:var(--mu)" id="stCnt"></div></div>'));
@@ -358,7 +364,7 @@ const mark=()=>{lset(K.ba,String(Date.now()));lset(K.pa,String(Date.now()))};
 function lastB(){const r=ls(K.ba,'');if(!r)return'هنوز نسخه پشتیبانی تهیه نشده است.';const d=new Date(+r),j=g2j(d.getFullYear(),d.getMonth()+1,d.getDate());return'آخرین پشتیبان‌گیری: '+fa(pad(j[0],4)+'/'+pad(j[1],2)+'/'+pad(j[2],2))}
 function payload(){return{app:'aria-sanat-masoumi',version:V,exportedAt:new Date().toISOString(),org:org,user:user,wh:wh,custom:custom,inv:inv}}
 function exportB(){noLock=Date.now()+12e4;try{const b=new Blob([JSON.stringify(payload(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='AriaBackup-'+todayJ().replace(/\//g,'-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}catch(e){toast('دانلود فایل ممکن نشد');return}mark();toast(user?'✓ '+user+' جان، پشتیبان دانلود شد':'✓ فایل پشتیبان دانلود شد')}
-function applyData(d,full,link){const a=Array.isArray(d)?d:d&&Array.isArray(d.inv)?d.inv:null;if(!a)return false;const c=a.map(clean).filter(Boolean);if(d&&!Array.isArray(d)){if(Array.isArray(d.custom)){d.custom.forEach(x=>{if(x&&x.k&&x.l&&/^[A-Za-z0-9_]+$/.test(String(x.k))&&!custom.some(y=>y.k===String(x.k)))custom.push({k:String(x.k),l:String(x.l).slice(0,40)})});pCats()}
+function applyData(d,full,link){if(full)try{localStorage.setItem(K.pv,JSON.stringify(payload()))}catch(e){}const a=Array.isArray(d)?d:d&&Array.isArray(d.inv)?d.inv:null;if(!a)return false;const c=a.map(clean).filter(Boolean);if(d&&!Array.isArray(d)){if(Array.isArray(d.custom)){d.custom.forEach(x=>{if(x&&x.k&&x.l&&/^[A-Za-z0-9_]+$/.test(String(x.k))&&!custom.some(y=>y.k===String(x.k)))custom.push({k:String(x.k),l:String(x.l).slice(0,40)})});pCats()}
 if(d.wh&&typeof d.wh==='object'){const nw=normWh(d.wh);if(full)wh=nw;else Object.keys(nw).forEach(k=>nw[k].forEach(v=>{if(!(wh[k]=wh[k]||[]).some(z=>nm(z)===nm(v)))wh[k].push(v)}))}
 if(full&&!link){if(d.org){org=String(d.org).trim().slice(0,80);lset(K.org,org)}if(d.user){user=String(d.user).trim().slice(0,80);lset(K.user,user)}}pWh()}
 if(full)inv=c;else{const ids={};inv.forEach(i=>{ids[i.id]=1});c.forEach(i=>{if(!ids[i.id]){inv.push(i);ids[i.id]=1}})}pInv();return c.length}
@@ -374,7 +380,7 @@ const N=v=>{if(!v)return'';return nd(String(v).replace(/-/g,'/'))||'!'},ex=N(o.e
 if(ex==='!'||fr==='!'||(ex&&t>ex))return bad('این لینک منقضی شده است');if(fr&&t<fr)return bad('این لینک هنوز فعال نشده است');
 if(confirm('اطلاعات «'+(P.get('name')||'اشتراکی')+'» بارگذاری شود؟\n(جایگزین اطلاعات فعلی می‌شود)')){const n=applyData(o,true,true);header();renderList();toast('✓ '+fa(n)+' فاکتور بارگذاری شد')}return false}
 /* تنظیمات */
-function openSettings(){openSheet(sh('تنظیمات','<div class="field"><label for="sU">نام شما</label><div class="date-wrap"><input id="sU" type="text" value="'+esc(user)+'"><button type="button" class="mini-btn" data-act="saveUser">ذخیره</button></div></div><div class="field"><label for="sO">نام سازمان / شرکت</label><div class="date-wrap"><input id="sO" type="text" value="'+esc(org||'آریا صنعت معصومی')+'"><button type="button" class="mini-btn" data-act="saveOrg">ذخیره</button></div></div><div class="sec-title">مدیریت و آمار</div><button class="action-btn" data-act="openWh">📦 انبار من — مدیریت مدل‌های قطعات</button><button class="action-btn" data-act="openStats">📊 آمار کالا — محاسبه مصرف در بازه زمانی</button><div class="sec-title">اشتراک‌گذاری</div><button class="action-btn" data-act="link">🔗 ساخت لینک اشتراک‌گذاری</button><div class="sec-title">پشتیبان‌گیری از اطلاعات</div><button class="action-btn" data-act="export">⬇️ دانلود پشتیبان (JSON)</button><button class="action-btn" data-act="import">⬆️ بازیابی از فایل پشتیبان</button><div class="hint">'+lastB()+'<br>فایل‌ها را در یک پوشه اختصاصی (مثلاً AriaBackup) نگه دارید.</div><div class="sec-title">امنیت</div><button class="action-btn" data-act="setPass">'+(pw?'🔐 تغییر یا حذف رمز عبور':'🔐 تعیین رمز عبور')+'</button><div class="sec-title" style="color:#c93b52">منطقه خطر</div><button class="danger-btn" data-act="reset" style="margin-bottom:12px">⚠️ ریست کامل سایت</button><div class="ver-row"><span class="k">نسخه برنامه</span><span class="v">'+VF+'</span></div>'))}
+function openSettings(){openSheet(sh('تنظیمات','<div class="field"><label for="sU">نام شما</label><div class="date-wrap"><input id="sU" type="text" value="'+esc(user)+'"><button type="button" class="mini-btn" data-act="saveUser">ذخیره</button></div></div><div class="field"><label for="sO">نام سازمان / شرکت</label><div class="date-wrap"><input id="sO" type="text" value="'+esc(org||'آریا صنعت معصومی')+'"><button type="button" class="mini-btn" data-act="saveOrg">ذخیره</button></div></div><div class="sec-title">مدیریت و آمار</div><button class="action-btn" data-act="openWh">📦 انبار من — مدیریت مدل‌های قطعات</button><button class="action-btn" data-act="openStats">📊 آمار کالا — محاسبه مصرف در بازه زمانی</button><div class="sec-title">اشتراک‌گذاری</div><button class="action-btn" data-act="link">🔗 ساخت لینک اشتراک‌گذاری</button><div class="sec-title">پشتیبان‌گیری از اطلاعات</div><button class="action-btn" data-act="export">⬇️ دانلود پشتیبان (JSON)</button><button class="action-btn" data-act="import">⬆️ بازیابی از فایل پشتیبان</button>'+(ls(K.pv,'')?'<button class="action-btn" data-act="undo">↩️ بازگردانی اطلاعات قبل از آخرین جایگزینی</button>':'')+'<div class="hint">'+lastB()+'<br>فایل‌ها را در یک پوشه اختصاصی (مثلاً AriaBackup) نگه دارید.</div><div class="sec-title">امنیت</div><button class="action-btn" data-act="setPass">'+(pw?'🔐 تغییر یا حذف رمز عبور':'🔐 تعیین رمز عبور')+'</button><div class="sec-title" style="color:#c93b52">منطقه خطر</div><button class="danger-btn" data-act="reset" style="margin-bottom:12px">⚠️ ریست کامل سایت</button><div class="ver-row"><span class="k">نسخه برنامه</span><span class="v">'+VF+'</span></div>'))}
 function setPass(){if(pw){passModal('verify');return}const go=()=>passModal('set');if(confirm('⚠️ هشدار امنیتی:\nاگر رمز را فراموش کنید، دسترسی به اطلاعات غیرممکن می‌شود.\nآیا می‌خواهید قبل از تعیین رمز، یک نسخه پشتیبان (بکاپ) دانلود کنید؟')){exportB();setTimeout(go,1500)}else go()}
 function reset(){closeSheet();lockScroll();setTimeout(()=>{if(!confirm('⚠️ '+(user?user+' جان، ':'')+'مطمئنی می‌خوای کل سایت رو ریست کنی؟'))return;setTimeout(()=>{if(!confirm('⚠️ واقعاً مطمئنی؟\n\nتمام اطلاعات شامل فاکتورها، نام، سازمان، انبار و رمز عبور پاک خواهند شد و قابل بازگشت نیستند!'))return;setTimeout(()=>{if(confirm('💾 آیا می‌خواید قبل از پاک شدن پشتیبان بگیرید؟\n\n• «تأیید» = اول پشتیبان می‌گیرم، سپس ریست\n• «لغو» = بدون پشتیبان، مستقیم ریست کن')){exportB();setTimeout(doReset,1400)}else doReset()},220)},220)},280)}
 function doReset(){Object.keys(K).forEach(k=>{try{localStorage.removeItem(K[k])}catch(e){}});toast('همه اطلاعات پاک شد. در حال بازگشت به حالت اولیه…');setTimeout(()=>location.reload(),1500)}
@@ -391,12 +397,12 @@ function finish(){$('#welcomeModal').hidden=true;lockScroll();header();vib(15);s
 $('#newInvoiceBtn').onclick=()=>openForm(null);$('#backBtn').onclick=()=>{st.edit=null;view('list')};
 $('#cancelBtn').onclick=()=>{if(confirm('فرم خالی شود و به لیست برگردید؟')){st.edit=null;view('list')}};$('#saveBtn').onclick=saveInv;$('#invoiceForm').onsubmit=e=>{e.preventDefault();saveInv()};
 document.addEventListener('click',e=>{const t=e.target.closest('[data-today]');if(t){const el=$('#'+t.dataset.today);el.value=fa(todayJ());el.classList.remove('invalid')}const p=e.target.closest('[data-picker]');if(p)openPicker(p.dataset.picker)});
-let sT;$('#searchInput').oninput=function(){st.q=this.value;clearTimeout(sT);sT=setTimeout(renderList,120)};
+let sT;$('#searchInput').oninput=function(){st.q=this.value;clearTimeout(sT);sT=setTimeout(()=>renderList(),250)};
 $('#searchFilter').onchange=function(){st.f=this.value;renderList()};$('#filterType').onchange=function(){st.ft=this.value;renderList()};
-$('#clearSearch').onclick=()=>{st.q='';$('#searchInput').value='';renderList()};$('#dateFilter').oninput=function(){st.d=this.value;renderList()};
+$('#clearSearch').onclick=()=>{st.q='';$('#searchInput').value='';renderList()};$('#dateFilter').oninput=function(){st.d=this.value;clearTimeout(sT);sT=setTimeout(()=>renderList(),250)};
 $('#clearFilters').onclick=()=>{st.q='';st.d='';$('#searchInput').value='';$('#dateFilter').value='';renderList()};
 $('#gShare').onclick=gShare;$('#gPrint').onclick=gPrint;
-$('#invoiceList').onclick=e=>{const c=e.target.closest('.invoice-card');if(c)openDetail(c.dataset.id)};
+$('#invoiceList').onclick=e=>{if(e.target.closest('.more-btn')){st.lim+=30;renderList(true);return}const c=e.target.closest('.invoice-card');if(c)openDetail(c.dataset.id)};
 $('#sheet').addEventListener('click',e=>{const pk=e.target.closest('[data-pick]');if(pk){$('#p_'+pk.dataset.target).value=fa(pk.dataset.pick);closeSheet();vib();toast('✓ انتخاب شد');return}
 let b=e.target.closest('[data-add-btn]');if(b){addItem(b.dataset.addBtn);return}b=e.target.closest('[data-del-cat]');if(b){const k=b.dataset.delCat,v=b.dataset.delVal;if(confirm('مدل «'+v+'» از انبار حذف شود؟')){wh[k]=wh[k].filter(x=>x!==v);pWh();vib(10);toast('✓ مدل حذف شد');setTimeout(refWh,40)}return}
 b=e.target.closest('[data-delcat]');if(b){const k=b.dataset.delcat;if(confirm('این دسته و مدل‌هایش حذف شود؟\n⚠️ مقدار این دسته از فاکتورهای قبلی هم پاک می‌شود.')){custom=custom.filter(c=>c.k!==k);delete wh[k];inv.forEach(i=>{delete i.p[k]});pInv();pCats();pWh();toast('✓ دسته حذف شد');setTimeout(refWh,40)}return}
@@ -404,7 +410,7 @@ b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act,id=b.dataset
 if(a==='close')closeSheet();else if(a==='edit'){closeSheet();openForm(id)}else if(a==='del')delInv(id);else if(a==='share')copy(itxt(inv.find(x=>x.id===id)),'✓ متن فاکتور کپی شد. می‌توانید در پیام‌رسان‌ها بچسبانید.');else if(a==='print'){closeSheet();setTimeout(()=>{const q=inv.find(x=>x.id===id);showPrint(paper(q),{k:'s',i:q})},260)}
 else if(a==='export')exportB();else if(a==='import'){noLock=Date.now()+18e4;$('#importFile').click()}else if(a==='saveUser'){if(saveUser($('#sU').value))toast(user+' جان، اسمت ذخیره شد ✓')}else if(a==='saveOrg'){if(saveOrg($('#sO').value))toast('نام سازمان ذخیره شد ✓')}
 else if(a==='openWh'){closeSheet();setTimeout(refWh,260)}else if(a==='openStats'){closeSheet();setTimeout(openStats,260)}else if(a==='link'){closeSheet();setTimeout(linkForm,260)}else if(a==='mkLink')mkLink();else if(a==='cpLink')copy($('#lU').value,'✓ لینک کپی شد');else if(a==='shLink'){navigator.share({title:'آریا صنعت معصومی',url:$('#lU').value}).catch(()=>{})}
-else if(a==='addCat')addCat();else if(a==='setPass')setPass();else if(a==='reset')reset()});
+else if(a==='undo')undo();else if(a==='addCat')addCat();else if(a==='setPass')setPass();else if(a==='reset')reset()});
 $('#sheetBackdrop').onclick=e=>{if(e.target.id==='sheetBackdrop')closeSheet()};$('#settingsBtn').onclick=openSettings;
 $('#importFile').onchange=function(){const f=this.files&&this.files[0];this.value='';if(f)importB(f)};
 $('#wNameNext').onclick=()=>{if(!saveUser($('#wNameInput').value))return;if(org)finish();else wS2()};
